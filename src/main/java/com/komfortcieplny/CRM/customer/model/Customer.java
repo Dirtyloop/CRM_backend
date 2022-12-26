@@ -1,6 +1,15 @@
 package com.komfortcieplny.CRM.customer.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Customer {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
     private String company;
     private String nip;
@@ -10,6 +19,8 @@ public class Customer {
     private int units;
     private boolean inspected;
 
+    public Customer() {
+    }
     public Customer(String name, String company, String nip, String street, String postalCode, String city, int units, boolean inspected) {
         this.name = name;
         this.company = company;
