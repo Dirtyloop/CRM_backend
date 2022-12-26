@@ -6,6 +6,9 @@ public class Customer {
     private String nip;
     private String street;
     private String postalCode;
+    private String city;
+    private int units;
+    private boolean inspected;
 
     public Customer(String name, String company, String nip, String street, String postalCode, String city, int units, boolean inspected) {
         this.name = name;
@@ -18,7 +21,6 @@ public class Customer {
         this.inspected = inspected;
     }
 
-    private String city;
 
     public String getName() {
         return name;
@@ -52,6 +54,5 @@ public class Customer {
         return inspected;
     }
 
-    private int units;
-    private boolean inspected;
+
 }
