@@ -21,12 +21,5 @@ public class CustomerController {
     @GetMapping("/customers")
     public List<Customer> getCustomers() {
         return customerService.getCustomers();
-
-//        return List.of(
-//                new Customer("Joanna Nowak", "AngloAnglo", "8882223311", "Dolinowa 13", "80-456", "Gdańsk", 2, true),
-//                new Customer("Anula Grochowska", "", "", "Owocowa 2", "82-456", "Sopot", 1, true),
-//                new Customer("Krystyna Ronaldo", "", "", "Wesoła 6/2", "62-123", "Konin", 5, false),
-//                new Customer("Julian Embabe", "Futbal", "5653421212", "Kolorowa 16/4", "80-234", "Gdańsk", 1, false)
-//        );
     }
 }

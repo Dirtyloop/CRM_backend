@@ -6,7 +6,7 @@ create table customer (
     company varchar(255) not null,
     nip varchar(255) not null,
     street varchar(255) not null,
-    postalCode varchar(255) not null,
+    postal_code varchar(255) not null,
     city varchar(255) not null,
     units bigint not null,
     inspected boolean not null
