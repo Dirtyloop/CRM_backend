@@ -2,6 +2,8 @@ package com.komfortcieplny.CRM.customer.service;
 
 import com.komfortcieplny.CRM.customer.model.Customer;
 import com.komfortcieplny.CRM.customer.repository.CustomerRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,7 +17,7 @@ public class CustomerService {
         this.customerRepository = customerRepository;
     }
 
-    public List<Customer> getCustomers() {
-        return customerRepository.findAll();
+    public Page<Customer> getCustomers(Pageable pageable) {
+        return customerRepository.findAll(pageable);
     }
 }
