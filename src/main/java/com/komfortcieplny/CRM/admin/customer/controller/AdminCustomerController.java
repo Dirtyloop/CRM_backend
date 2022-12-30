@@ -22,4 +22,9 @@ public class AdminCustomerController {
     public Page<AdminCustomer> getCustomers(Pageable pageable) {
         return adminCustomerService.getCustomers(pageable);
     }
+
+    @GetMapping("/admin/customersSortByName")
+    public Page<AdminCustomer> getCustomersSortByName(String name, Pageable pageable) {
+        return adminCustomerService.getCustomersSortByName(name, pageable);
+    }
 }
