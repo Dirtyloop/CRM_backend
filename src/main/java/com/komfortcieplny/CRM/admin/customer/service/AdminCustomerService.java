@@ -1,5 +1,6 @@
 package com.komfortcieplny.CRM.admin.customer.service;
 
+import com.komfortcieplny.CRM.admin.customer.exceptions.CustomerNotFoundException;
 import com.komfortcieplny.CRM.admin.customer.model.AdminCustomer;
 import com.komfortcieplny.CRM.admin.customer.repository.AdminCustomerRepository;
 import com.komfortcieplny.CRM.customer.model.Customer;
@@ -22,5 +23,10 @@ public class AdminCustomerService {
 
     public Page<AdminCustomer> getCustomersSortByName(String name, Pageable pageable) {
         return adminCustomerRepository.findByNameContaining(name, pageable);
+    }
+
+    public AdminCustomer getCustomer(Long id) {
+        return adminCustomerRepository.findById(id).orElseThrow(() ->
+                new CustomerNotFoundException(String.format("Customer with id %s was not found", id)));
     }
 }
