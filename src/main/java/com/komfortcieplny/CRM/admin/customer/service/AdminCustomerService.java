@@ -3,7 +3,6 @@ package com.komfortcieplny.CRM.admin.customer.service;
 import com.komfortcieplny.CRM.admin.customer.exceptions.CustomerNotFoundException;
 import com.komfortcieplny.CRM.admin.customer.model.AdminCustomer;
 import com.komfortcieplny.CRM.admin.customer.repository.AdminCustomerRepository;
-import com.komfortcieplny.CRM.customer.model.Customer;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -28,5 +27,13 @@ public class AdminCustomerService {
     public AdminCustomer getCustomer(Long id) {
         return adminCustomerRepository.findById(id).orElseThrow(() ->
                 new CustomerNotFoundException(String.format("Customer with id %s was not found", id)));
+    }
+
+    public AdminCustomer createCustomer(AdminCustomer customer) {
+        return adminCustomerRepository.save(customer);
+    }
+
+    public AdminCustomer updateCustomer(AdminCustomer customer) {
+        return adminCustomerRepository.save(customer);
     }
 }

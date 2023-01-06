@@ -21,7 +21,8 @@ public class Customer {
 
     public Customer() {
     }
-    public Customer(String name, String company, String nip, String street, String postalCode, String city, int units, boolean inspected) {
+    public Customer(Long id, String name, String company, String nip, String street, String postalCode, String city, int units, boolean inspected) {
+        this.id = id;
         this.name = name;
         this.company = company;
         this.nip = nip;
