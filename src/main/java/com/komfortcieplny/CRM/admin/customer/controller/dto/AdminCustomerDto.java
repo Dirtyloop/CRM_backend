@@ -1,14 +1,32 @@
 package com.komfortcieplny.CRM.admin.customer.controller.dto;
 
+import com.komfortcieplny.CRM.admin.customer.model.AdminProductInspected;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import org.hibernate.validator.constraints.Length;
+
 public class AdminCustomerDto {
+    @NotBlank
+    @Length(min = 3, max = 32)
     private String name;
+    @NotBlank
+    @Length(min = 3, max = 32)
     private String company;
+    @NotBlank
+    @Length(min = 3, max = 32)
     private String nip;
+    @NotBlank
+    @Length(min = 3, max = 32)
     private String street;
+    @NotBlank
+    @Length(min = 3, max = 32)
     private String postalCode;
+    @NotBlank
+    @Length(min = 3, max = 32)
     private String city;
+    @Min(0)
     private int units;
-    private boolean inspected;
+    private AdminProductInspected inspected;
 
     public String getName() {
         return name;
@@ -38,7 +56,7 @@ public class AdminCustomerDto {
         return units;
     }
 
-    public boolean isInspected() {
+    public AdminProductInspected isInspected() {
         return inspected;
     }
 }

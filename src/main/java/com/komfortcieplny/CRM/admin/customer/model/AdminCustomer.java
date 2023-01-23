@@ -15,14 +15,23 @@ public class AdminCustomer {
     private String postalCode;
     private String city;
     private int units;
-    private boolean inspected;
+    @Enumerated(EnumType.STRING)
+    private AdminProductInspected inspected;
 
     public AdminCustomer() {
     }
 
 
 
-    public AdminCustomer(Long id, String name, String company, String nip, String street, String postalCode, String city, int units, boolean inspected) {
+    public AdminCustomer(Long id,
+                         String name,
+                         String company,
+                         String nip,
+                         String street,
+                         String postalCode,
+                         String city,
+                         int units,
+                         AdminProductInspected inspected) {
         this.id = id;
         this.name = name;
         this.company = company;
@@ -82,7 +91,7 @@ public class AdminCustomer {
         return units;
     }
 
-    public boolean isInspected() {
+    public AdminProductInspected isInspected() {
         return inspected;
     }
 
@@ -95,7 +104,7 @@ public class AdminCustomer {
         private String postalCode;
         private String city;
         private int units;
-        private boolean inspected;
+        private AdminProductInspected inspected;
 
         private Builder() {
         }
@@ -140,7 +149,7 @@ public class AdminCustomer {
             return this;
         }
 
-        public Builder inspected(boolean val) {
+        public Builder inspected(AdminProductInspected val) {
             inspected = val;
             return this;
         }

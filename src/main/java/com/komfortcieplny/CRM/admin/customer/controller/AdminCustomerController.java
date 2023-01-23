@@ -3,6 +3,7 @@ package com.komfortcieplny.CRM.admin.customer.controller;
 import com.komfortcieplny.CRM.admin.customer.controller.dto.AdminCustomerDto;
 import com.komfortcieplny.CRM.admin.customer.model.AdminCustomer;
 import com.komfortcieplny.CRM.admin.customer.service.AdminCustomerService;
+import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
@@ -34,12 +35,12 @@ public class AdminCustomerController {
     }
 
     @PostMapping("/admin/customers")
-    public AdminCustomer createCustomer(@RequestBody AdminCustomerDto adminCustomerDto) {
+    public AdminCustomer createCustomer(@RequestBody @Valid AdminCustomerDto adminCustomerDto) {
         return adminCustomerService.createCustomer(mapAdminCustomer(adminCustomerDto, EMPTY_ID));
     }
 
-    @PutMapping("/admin/customer/{id}")
-    public AdminCustomer updateCustomer(@RequestBody AdminCustomerDto adminCustomerDto, @PathVariable Long id) {
+    @PutMapping("/admin/customers/{id}")
+    public AdminCustomer updateCustomer(@RequestBody @Valid AdminCustomerDto adminCustomerDto, @PathVariable Long id) {
         return adminCustomerService.updateCustomer(mapAdminCustomer(adminCustomerDto, id));
     }
 
