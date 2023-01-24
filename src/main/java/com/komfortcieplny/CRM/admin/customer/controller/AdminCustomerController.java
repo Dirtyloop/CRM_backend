@@ -54,7 +54,7 @@ public class AdminCustomerController {
                 .postalCode(adminCustomerDto.getPostalCode())
                 .city(adminCustomerDto.getCity())
                 .units(adminCustomerDto.getUnits())
-                .inspected(adminCustomerDto.isInspected())
+                .inspected(adminCustomerDto.getInspected())
                 .build();
     }
 }

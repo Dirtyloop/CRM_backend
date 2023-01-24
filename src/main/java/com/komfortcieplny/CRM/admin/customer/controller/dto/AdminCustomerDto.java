@@ -1,6 +1,6 @@
 package com.komfortcieplny.CRM.admin.customer.controller.dto;
 
-import com.komfortcieplny.CRM.admin.customer.model.AdminProductInspected;
+import com.komfortcieplny.CRM.admin.customer.model.AdminCustomerInspected;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import org.hibernate.validator.constraints.Length;
@@ -26,7 +26,7 @@ public class AdminCustomerDto {
     private String city;
     @Min(0)
     private int units;
-    private AdminProductInspected inspected;
+    private AdminCustomerInspected inspected;
 
     public String getName() {
         return name;
@@ -56,7 +56,7 @@ public class AdminCustomerDto {
         return units;
     }
 
-    public AdminProductInspected isInspected() {
+    public AdminCustomerInspected getInspected() {
         return inspected;
     }
 }

@@ -16,7 +16,7 @@ public class AdminCustomer {
     private String city;
     private int units;
     @Enumerated(EnumType.STRING)
-    private AdminProductInspected inspected;
+    private AdminCustomerInspected inspected;
 
     public AdminCustomer() {
     }
@@ -31,7 +31,7 @@ public class AdminCustomer {
                          String postalCode,
                          String city,
                          int units,
-                         AdminProductInspected inspected) {
+                         AdminCustomerInspected inspected) {
         this.id = id;
         this.name = name;
         this.company = company;
@@ -91,7 +91,7 @@ public class AdminCustomer {
         return units;
     }
 
-    public AdminProductInspected isInspected() {
+    public AdminCustomerInspected getInspected() {
         return inspected;
     }
 
@@ -104,7 +104,7 @@ public class AdminCustomer {
         private String postalCode;
         private String city;
         private int units;
-        private AdminProductInspected inspected;
+        private AdminCustomerInspected inspected;
 
         private Builder() {
         }
@@ -149,7 +149,7 @@ public class AdminCustomer {
             return this;
         }
 
-        public Builder inspected(AdminProductInspected val) {
+        public Builder inspected(AdminCustomerInspected val) {
             inspected = val;
             return this;
         }
