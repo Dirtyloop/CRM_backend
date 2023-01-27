@@ -1,19 +1,19 @@
 package com.komfortcieplny.CRM.admin.customer.controller.dto;
 
 import com.komfortcieplny.CRM.admin.customer.model.AdminCustomerInspected;
+import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Length;
 
 public class AdminCustomerDto {
     @NotBlank
     @Length(min = 3, max = 32)
     private String name;
-    @NotBlank
-    @Length(min = 3, max = 32)
+
     private String company;
-    @NotBlank
-    @Length(min = 3, max = 32)
+
     private String nip;
     @NotBlank
     @Length(min = 3, max = 32)

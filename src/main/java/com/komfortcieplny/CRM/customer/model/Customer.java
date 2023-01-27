@@ -17,11 +17,11 @@ public class Customer {
     private String postalCode;
     private String city;
     private int units;
-    private boolean inspected;
+    private String inspected;
 
     public Customer() {
     }
-    public Customer(Long id, String name, String company, String nip, String street, String postalCode, String city, int units, boolean inspected) {
+    public Customer(Long id, String name, String company, String nip, String street, String postalCode, String city, int units, String inspected) {
         this.id = id;
         this.name = name;
         this.company = company;
@@ -62,7 +62,7 @@ public class Customer {
         return units;
     }
 
-    public boolean isInspected() {
+    public String getInspected() {
         return inspected;
     }
 
