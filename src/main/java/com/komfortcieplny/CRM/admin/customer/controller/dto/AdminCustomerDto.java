@@ -1,30 +1,28 @@
 package com.komfortcieplny.CRM.admin.customer.controller.dto;
 
 import com.komfortcieplny.CRM.admin.customer.model.AdminCustomerInspected;
-import jakarta.validation.constraints.Digits;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.*;
 import org.hibernate.validator.constraints.Length;
 
 public class AdminCustomerDto {
     @NotBlank
     @Length(min = 3, max = 32)
     private String name;
-
+    @Length(min = 0, max = 32)
     private String company;
-
+    @Length(min = 0, max = 32)
     private String nip;
     @NotBlank
     @Length(min = 3, max = 32)
     private String street;
     @NotBlank
-    @Length(min = 3, max = 32)
+    @Pattern(regexp = "[0-9]{2}-[0-9]{3}")
     private String postalCode;
     @NotBlank
     @Length(min = 3, max = 32)
     private String city;
     @Min(0)
+    @Max(99)
     private int units;
     private AdminCustomerInspected inspected;
 
