@@ -44,6 +44,11 @@ public class AdminCustomerController {
         return adminCustomerService.updateCustomer(mapAdminCustomer(adminCustomerDto, id));
     }
 
+    @DeleteMapping("/admin/customers/{id}")
+    public void deleteCustomer(@PathVariable Long id) {
+        adminCustomerService.deleteCustomer(id);
+    }
+
     private static AdminCustomer mapAdminCustomer(AdminCustomerDto adminCustomerDto, Long id) {
         return AdminCustomer.builder()
                 .id(id)

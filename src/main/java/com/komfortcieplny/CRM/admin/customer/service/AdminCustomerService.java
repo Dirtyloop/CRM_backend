@@ -36,4 +36,8 @@ public class AdminCustomerService {
     public AdminCustomer updateCustomer(AdminCustomer customer) {
         return adminCustomerRepository.save(customer);
     }
+
+    public void deleteCustomer(Long id) {
+        adminCustomerRepository.deleteById(id);
+    }
 }
