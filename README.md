@@ -1,28 +1,21 @@
-# CRM system for AC company
+# CRM system for AC company - backend
 
 ### Database of customers and installations for my air-conditioning company
 
-Application preview deployed on AWS Elastic Beanstalk with RDS and S3 (not available right now):
-
-![InstalBase](https://github.com/Dirtyloop/InstalBase/blob/master/screenShot.png)
+![CRM](https://github.com/Dirtyloop/CRM_backend/blob/master/screen.png)
 
 ### Tech Stack:
 
 * [Official Java Page](https://www.java.com/)
 * [Spring Boot](https://spring.io/projects/spring-boot)
-* [Spring Security](https://spring.io/projects/spring-security)
+* [Spring Security](https://spring.io/projects/spring-security) TBC
 * [Angular](https://angular.io/)
-* [AWS](https://aws.amazon.com/)
 
 
 ### Features
 
 - [X] CRUD API with database connection:
--     you can add, edit, delete, increase or decrease the quantity with one click
+-     you can create, read, update and delete customers
 - [x] Frontend in Angular
-- [x] Search through database
-- [x] Sorting items by names and by price
-- [x] Export database into Excel file
-- [x] Print database
-- [ ] Basic Auth implementation
-- [ ] Email low stock level notification
+- [x] Sorting customers
+- [ ] Spring Security
