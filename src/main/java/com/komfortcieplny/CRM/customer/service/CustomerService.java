@@ -1,5 +1,6 @@
 package com.komfortcieplny.CRM.customer.service;
 
+import com.komfortcieplny.CRM.admin.customer.exceptions.CustomerNotFoundException;
 import com.komfortcieplny.CRM.customer.model.Customer;
 import com.komfortcieplny.CRM.customer.repository.CustomerRepository;
 import org.springframework.data.domain.Page;
@@ -22,4 +23,8 @@ public class CustomerService {
     }
 
 
+    public Customer getCustomer(Long id) {
+        return customerRepository.findById(id).orElseThrow(() ->
+                new CustomerNotFoundException(String.format("Customer with id %s was not found", id)));
+    }
 }
