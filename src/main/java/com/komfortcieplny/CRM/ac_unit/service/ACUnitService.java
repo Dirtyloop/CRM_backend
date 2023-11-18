@@ -1,5 +1,6 @@
 package com.komfortcieplny.CRM.ac_unit.service;
 
+import com.komfortcieplny.CRM.ac_unit.model.ACUnit;
 import com.komfortcieplny.CRM.ac_unit.repository.ACUnitRepository;
 import org.springframework.stereotype.Service;
 
@@ -9,5 +10,9 @@ public class ACUnitService {
 
     public ACUnitService(ACUnitRepository acUnitRepository) {
         this.acUnitRepository = acUnitRepository;
+    }
+
+    public ACUnit addACUnit(ACUnit acUnit) {
+        return acUnitRepository.save(acUnit);
     }
 }
