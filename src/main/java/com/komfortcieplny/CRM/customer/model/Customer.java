@@ -1,9 +1,9 @@
 package com.komfortcieplny.CRM.customer.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.komfortcieplny.CRM.ac_unit.model.ACUnit;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Customer {
@@ -18,10 +18,14 @@ public class Customer {
     private String city;
     private int units;
     private String inspected;
+    @OneToMany
+    @JoinColumn(name = "customerId")
+    private List<ACUnit> acUnits;
 
     public Customer() {
     }
-    public Customer(Long id, String name, String company, String nip, String street, String postalCode, String city, int units, String inspected) {
+
+    public Customer(Long id, String name, String company, String nip, String street, String postalCode, String city, int units, String inspected, List<ACUnit> acUnits) {
         this.id = id;
         this.name = name;
         this.company = company;
@@ -31,8 +35,8 @@ public class Customer {
         this.city = city;
         this.units = units;
         this.inspected = inspected;
+        this.acUnits = acUnits;
     }
-
 
     public String getName() {
         return name;
@@ -66,8 +70,11 @@ public class Customer {
         return inspected;
     }
 
-
     public Long getId() {
         return id;
+    }
+
+    public List<ACUnit> getAcUnits() {
+        return acUnits;
     }
 }
