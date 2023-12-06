@@ -18,7 +18,7 @@ public class ACUnitController {
         this.acunitService = acunitService;
     }
 
-    @PostMapping("/acunits")
+    @PostMapping("/admin/acunits")
     public ACUnit addACUnit(@RequestBody @Valid ACUnitDto acUnitDto) {
         return acunitService.addACUnit(ACUnit.builder()
                         .model(acUnitDto.model())
