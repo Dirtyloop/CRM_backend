@@ -1,7 +1,7 @@
 package com.komfortcieplny.CRM.ac_unit.controller;
 
 import com.komfortcieplny.CRM.ac_unit.controller.dto.ACUnitDto;
-import com.komfortcieplny.CRM.ac_unit.model.ACUnit;
+import com.komfortcieplny.CRM.common.model.ACUnit;
 import com.komfortcieplny.CRM.ac_unit.service.ACUnitService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;

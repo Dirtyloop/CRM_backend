@@ -1,6 +1,5 @@
-package com.komfortcieplny.CRM.customer.model;
+package com.komfortcieplny.CRM.common.model;
 
-import com.komfortcieplny.CRM.ac_unit.model.ACUnit;
 import jakarta.persistence.*;
 
 import java.util.List;

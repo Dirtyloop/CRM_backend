@@ -1,4 +1,4 @@
-package com.komfortcieplny.CRM.ac_unit.model;
+package com.komfortcieplny.CRM.common.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

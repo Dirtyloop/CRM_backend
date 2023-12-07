@@ -1,4 +1,4 @@
-package com.komfortcieplny.CRM.customer.controller.dto;
+package com.komfortcieplny.CRM.common.dto;
 
 public class CustomerListDto {
     private Long id;

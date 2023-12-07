@@ -1,7 +1,7 @@
 package com.komfortcieplny.CRM.customer.controller;
 
-import com.komfortcieplny.CRM.customer.controller.dto.CustomerListDto;
-import com.komfortcieplny.CRM.customer.model.Customer;
+import com.komfortcieplny.CRM.common.dto.CustomerListDto;
+import com.komfortcieplny.CRM.common.model.Customer;
 import com.komfortcieplny.CRM.customer.service.CustomerService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;

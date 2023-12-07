@@ -1,13 +1,11 @@
 package com.komfortcieplny.CRM.customer.service;
 
 import com.komfortcieplny.CRM.admin.customer.exceptions.CustomerNotFoundException;
-import com.komfortcieplny.CRM.customer.model.Customer;
+import com.komfortcieplny.CRM.common.model.Customer;
 import com.komfortcieplny.CRM.customer.repository.CustomerRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class CustomerService {
