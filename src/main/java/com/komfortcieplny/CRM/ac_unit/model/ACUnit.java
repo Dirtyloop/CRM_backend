@@ -18,6 +18,9 @@ public class ACUnit {
     private String serialNumber;
     private LocalDate instalDate;
 
+    public ACUnit() {
+    }
+
     private ACUnit(Builder builder) {
         id = builder.id;
         customerId = builder.customerId;
