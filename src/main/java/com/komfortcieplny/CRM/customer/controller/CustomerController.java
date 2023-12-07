@@ -1,8 +1,10 @@
 package com.komfortcieplny.CRM.customer.controller;
 
+import com.komfortcieplny.CRM.customer.controller.dto.CustomerListDto;
 import com.komfortcieplny.CRM.customer.model.Customer;
 import com.komfortcieplny.CRM.customer.service.CustomerService;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,8 +24,18 @@ public class CustomerController {
     }
 
     @GetMapping("/customers")
-    public Page<Customer> getCustomers(Pageable pageable) {
-        return customerService.getCustomers(pageable);
+    public Page<CustomerListDto> getCustomers(Pageable pageable) {
+        Page<Customer> customers = customerService.getCustomers(pageable);
+        List<CustomerListDto> customerListDtos = customers.getContent().stream()
+                .map(customer -> CustomerListDto.builder()
+                        .id(customer.getId())
+                        .name(customer.getName())
+                        .city(customer.getCity())
+                        .units(customer.getUnits())
+                        .inspected(customer.getInspected())
+                        .build())
+                .toList();
+        return new PageImpl<>(customerListDtos, pageable, customers.getTotalElements());
     }
 
     @GetMapping("/customers/{id}")
